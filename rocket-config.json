@@ -30,6 +30,7 @@
                 {
                     "input": [
                         "environment.fragment",
+                        "license.fragment",
                         "../bin/mamplogger.js"
                     ],
                     "output": "mamplogger_comb.js"
