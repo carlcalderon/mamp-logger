@@ -1,0 +1,54 @@
+{
+    "inputDir":"src",
+    "outputDir":"bin",
+    "defaultBuildOrder": "complete",
+    "buildOrders": [
+        {
+            "id": "complete",
+            "items": [
+                {
+                    "buildOrder": ["clean", "compile", "fix"]
+                }
+            ]
+        },
+        {
+            "id": "clean",
+            "items": [
+                {
+                    "exec": "rm -r ../bin"
+                }
+            ]
+        },
+        {
+            "id": "compile",
+            "items": [
+                {
+                    "input": "mamplogger.coffee",
+                    "minify": true,
+                    "output": "mamplogger.js"
+                },
+                {
+                    "input": [
+                        "environment.fragment",
+                        "../bin/mamplogger.js"
+                    ],
+                    "output": "mamplogger_comb.js"
+                }
+            ]
+        },
+        {
+            "id": "fix",
+            "items": [
+                {
+                    "exec": "mv ../bin/mamplogger_comb.js ../bin/mamplogger"
+                },
+                {
+                    "exec": "chmod +x ../bin/mamplogger"
+                },
+                {
+                    "exec": "rm ../bin/mamplogger.js"
+                }
+            ]
+        }
+    ]
+}
