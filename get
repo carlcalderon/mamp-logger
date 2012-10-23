@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo git clone -b "deploy" https://github.com/carlcalderon/mamp-logger.git /usr/local/lib/mamplogger
+sudo ln -s /usr/local/lib/mamplogger/bin/mamplogger /usr/local/bin/mamplogger
